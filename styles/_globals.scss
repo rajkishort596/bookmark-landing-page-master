@@ -1,0 +1,62 @@
+html,
+body {
+  font-size: 100%;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+a,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+a {
+  font-size: 0.875rem;
+}
+p {
+  color: #9194a1;
+  line-height: 1.5;
+  font-size: 1.25rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75rem;
+  outline: none;
+  background: none;
+  font-weight: 500;
+  background-color: white;
+  box-shadow: 0px 2px 5px $Grayish-Blue;
+  color: $Very-Dark-Blue;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  width: fit-content;
+}
+.blue {
+  background-color: $Soft-Blue;
+  color: white;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    background-color: transparent;
+    color: $Soft-Blue;
+  }
+}
+#hidden {
+  display: none;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}

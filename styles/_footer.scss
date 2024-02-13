@@ -1,0 +1,152 @@
+.footer {
+  &__container {
+    background-color: $Soft-Blue;
+  }
+  &__contact-us {
+    @include flexColumn;
+    padding: 3.125rem 1.875rem;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    margin: auto;
+    @media screen and (min-width: 48em) {
+      padding: 3.125rem 6.25rem;
+    }
+    p {
+      color: white;
+      letter-spacing: 2px;
+    }
+    h2 {
+      line-height: 1.5;
+    }
+    .form {
+      width: 100%;
+      @include flexColumn;
+      gap: 50px;
+      align-items: center;
+      @media screen and (min-width: 48em) {
+        flex-direction: row;
+      }
+      .input-group {
+        width: 100%;
+        position: relative;
+        input {
+          width: 100%;
+          padding: 15px;
+          border-radius: 10px;
+          outline: none;
+          border: none;
+          &::placeholder {
+            color: $Grayish-Blue;
+            letter-spacing: 1.5px;
+          }
+        }
+        .error-icon {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          width: 25px;
+          transform: translateY(-50%);
+          display: none;
+        }
+        .error {
+          display: none;
+          position: absolute;
+          bottom: -20px;
+          left: 0;
+          font-style: italic;
+          text-align: left;
+          background-color: $Soft-Red;
+          width: 100%;
+          padding: 5px;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+      }
+      .input-group.error {
+        input {
+          border: 2px solid $Soft-Red;
+        }
+        .error-icon,
+        .error {
+          display: block;
+        }
+      }
+      button {
+        width: 100%;
+        background-color: $Soft-Red;
+        border: none;
+        outline: none;
+        padding: 15px;
+        font-weight: 500;
+        border-radius: 10px;
+        letter-spacing: 1px;
+        color: white;
+        cursor: pointer;
+        border: 2px solid $Soft-Red;
+        transition: all 300ms ease-in-out;
+        &:hover {
+          background-color: white;
+          color: $Soft-Red;
+        }
+        @media screen and (min-width: 48em) {
+          min-width: 110px;
+          width: fit-content;
+        }
+      }
+    }
+  }
+  &__navigation {
+    padding: 3.125rem 1.875rem;
+    @include flexColumn;
+    gap: 50px;
+    align-items: center;
+    background-color: $Very-Dark-Blue;
+    color: white;
+    @media screen and (min-width: 48em) {
+      padding: 3.125rem 6.25rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .secondary-navigation {
+      @include flexColumn;
+      gap: 30px;
+      @media screen and (min-width: 48em) {
+        flex-direction: row;
+      }
+    }
+    .logo {
+      cursor: pointer;
+      svg path {
+        fill: white;
+      }
+    }
+    nav {
+      @include flexColumn;
+      gap: 30px;
+      @media screen and (min-width: 48em) {
+        flex-direction: row;
+      }
+      a {
+        color: white;
+        transition: all 300ms ease-in-out;
+        &:hover {
+          color: $Soft-Red;
+        }
+      }
+    }
+    .social-icons {
+      @include flexColumn;
+      flex-direction: row;
+      gap: 35px;
+      svg {
+        &:hover {
+          path {
+            transition: all 300ms ease-in-out;
+            fill: red;
+          }
+        }
+      }
+    }
+  }
+}

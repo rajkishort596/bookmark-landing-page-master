@@ -1,0 +1,95 @@
+.header {
+  &__container {
+    padding: 3.125rem 1.875rem;
+    position: relative;
+    @media screen and (min-width: 48em) {
+      padding: 3.125rem 6.25rem;
+    }
+  }
+  &__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__navbar.active {
+    .header__logo {
+      z-index: 100;
+      svg path {
+        fill: white;
+      }
+    }
+    .hambergur .close {
+      display: block;
+    }
+    .hambergur .open {
+      display: none;
+    }
+    .header__links {
+      @media screen and (max-width: 48em) {
+        right: 0;
+      }
+    }
+  }
+  &__links {
+    display: none;
+    transition: right 0.5s ease-in-out;
+    @media screen and (max-width: 48em) {
+      padding: 6.125rem 1.875rem;
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(37, 43, 70, 0.9);
+      z-index: 10;
+      @include flexColumn;
+      gap: 0;
+    }
+    a {
+      text-decoration: none;
+      color: $Very-Dark-Blue;
+      letter-spacing: 1px;
+      text-align: center;
+      transition: all 300ms ease-in-out;
+      &:hover {
+        color: $Soft-Red;
+      }
+      @media screen and (max-width: 48em) {
+        width: 100%;
+        color: white;
+        padding: 15px 30px;
+        border-top: 1px solid $Grayish-Blue;
+      }
+    }
+    a:last-child {
+      color: white;
+      background-color: $Soft-Red;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      border: 2px solid $Soft-Red;
+      &:hover {
+        background-color: transparent;
+
+        color: $Soft-Red;
+      }
+      @media screen and (max-width: 48em) {
+        border: 2px solid white;
+        background-color: transparent;
+      }
+    }
+    @media screen and (min-width: 48em) {
+      display: flex;
+      gap: 2.125rem;
+      align-items: center;
+    }
+  }
+  .hambergur {
+    z-index: 1000;
+    @media screen and (min-width: 48em) {
+      display: none;
+    }
+    .close {
+      display: none;
+    }
+  }
+}

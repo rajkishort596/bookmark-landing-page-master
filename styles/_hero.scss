@@ -1,0 +1,88 @@
+.hero {
+  &__container {
+    @include flexColumn;
+    justify-content: center;
+    max-width: 35em;
+    margin: 0 auto;
+    padding: 2.125rem 1.875rem;
+    @media screen and (min-width: 60em) {
+      padding: 3.125rem 6.25rem;
+      flex-direction: row;
+      align-items: flex-start;
+      flex-flow: row-reverse;
+      justify-content: space-between;
+      max-width: unset;
+    }
+  }
+  &__img-box {
+    max-width: 600px;
+    position: relative;
+    flex: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 150px;
+      bottom: 0px;
+      background-color: $Soft-Blue;
+      width: 100%;
+      height: 65%;
+      border-top-left-radius: 250px;
+      border-bottom-left-radius: 250px;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      z-index: -1;
+      @media screen and (min-width: 60em) {
+        height: 70%;
+        left: 200px;
+        bottom: -20px;
+      }
+    }
+  }
+  &__content-box {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    flex: 1;
+    @media screen and (min-width: 60em) {
+      text-align: left;
+      padding-top: 1.5rem;
+    }
+    h1 {
+      color: $Very-Dark-Blue;
+      @media screen and (min-width: 60em) {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      color: $Grayish-Blue;
+      line-height: 1.5;
+      @media screen and (min-width: 60em) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  &__cta-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    @media screen and (min-width: 60em) {
+      justify-content: flex-start;
+    }
+    a {
+      &:first-child {
+        border: 2px solid $Soft-Blue;
+      }
+      &:last-child {
+        border: 2px solid $Grayish-Blue;
+        &:hover {
+          background-color: transparent;
+          color: $Grayish-Blue;
+        }
+      }
+    }
+  }
+}
